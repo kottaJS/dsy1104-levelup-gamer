@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Usuario — LEVEL-UP GAMER</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/admin.css?v=2.5">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="admin.html" class="sidebar-brand">
+        <img src="../../assets/img/logo.png" alt="Logo" class="brand-logo-img">
+        <span>Level-Up <span style="color: #1E90FF;">Admin</span></span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-heading">Gestión Principal</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin.html" class="sidebar-link">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-productos.html" class="sidebar-link">
+            <span>Inventario Productos</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuarios.html" class="sidebar-link active">
+            <span>Usuarios & Roles</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-heading">Accesos Rápidos</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin-producto-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Producto</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuario-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Usuario</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../index.html" class="sidebar-link" target="_blank">
+            <span>Ver Tienda</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <small style="color: #8e9bb3; display: block; font-size: 0.75rem;">
+        DSY1104 · Duoc UC<br>Forma B: LEVEL-UP GAMER
+      </small>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h2 id="form-title">NUEVO USUARIO</h2>
+      </div>
+
+      <div id="admin-user-display">
+        <!-- Inyectado por js/admin.js -->
+      </div>
+    </header>
+
+    <div class="admin-content">
+      
+      <div class="admin-form-card">
+        <h3>Registro y Asignación de Rol</h3>
+
+        <form id="form-usuario-admin" novalidate>
+          
+          <div class="form-group">
+            <label for="usr-run" class="form-label">RUN (RUT) (*):</label>
+            <input type="text" id="usr-run" class="form-control" placeholder="Ej: 19011022K (sin puntos ni guion)" maxlength="9" required>
+            <div class="invalid-feedback"></div>
+            <p class="form-hint">Mínimo 7 y máximo 9 caracteres sin signos. Algoritmo Módulo 11.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="usr-nombre" class="form-label">Nombre (*):</label>
+              <input type="text" id="usr-nombre" class="form-control" placeholder="Nombre" maxlength="50" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="usr-apellidos" class="form-label">Apellidos (*):</label>
+              <input type="text" id="usr-apellidos" class="form-control" placeholder="Apellidos" maxlength="100" required>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="usr-correo" class="form-label">Correo Electrónico (*):</label>
+            <input type="email" id="usr-correo" class="form-control" placeholder="usuario@duoc.cl o @gmail.com" maxlength="100" required>
+            <div class="invalid-feedback"></div>
+            <p class="form-hint">Solo correos terminados en <code>@duoc.cl</code>, <code>@profesor.duoc.cl</code> o <code>@gmail.com</code>.</p>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="usr-pass" class="form-label">Contraseña (*):</label>
+              <input type="password" id="usr-pass" class="form-control" placeholder="Entre 4 y 20 caracteres" maxlength="30">
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="usr-tipo" class="form-label">Tipo de Usuario (Rol) (*):</label>
+              <select id="usr-tipo" class="form-control" required>
+                <option value="">-- Seleccione un rol --</option>
+                <option value="Administrador">Administrador</option>
+                <option value="Vendedor">Vendedor</option>
+                <option value="Cliente">Cliente</option>
+              </select>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="usr-fecha-nac" class="form-label">Fecha de Nacimiento:</label>
+            <input type="date" id="usr-fecha-nac" class="form-control">
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="usr-region" class="form-label">Región (*):</label>
+              <select id="usr-region" class="form-control" required>
+                <option value="">-- Seleccione una región --</option>
+              </select>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="usr-comuna" class="form-label">Comuna (*):</label>
+              <select id="usr-comuna" class="form-control" required>
+                <option value="">-- Primero seleccione una región --</option>
+              </select>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="usr-direccion" class="form-label">Dirección / Calle y Número (*):</label>
+            <input type="text" id="usr-direccion" class="form-control" placeholder="Ej: Av. Concha y Toro 1340" maxlength="200" required>
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 24px;">
+            <button type="submit" class="btn btn-primary" id="btn-guardar-usuario">
+              Guardar Usuario
+            </button>
+            <a href="admin-usuarios.html" class="btn btn-secondary">
+              Cancelar
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  
+    <footer class="admin-footer">
+      <span>&copy; 2026 Level-Up Gamer — Panel de Administración</span>
+      <span>DSY1104 · Duoc UC</span>
+    </footer>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/validations.js"></script>
+  <script src="../../js/cart.js"></script>
+  <script src="../../js/admin.js"></script>
+</body>
+</html>

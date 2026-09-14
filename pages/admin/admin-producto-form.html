@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Producto — LEVEL-UP GAMER</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/admin.css?v=2.5">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="admin.html" class="sidebar-brand">
+        <img src="../../assets/img/logo.png" alt="Logo" class="brand-logo-img">
+        <span>Level-Up <span style="color: #1E90FF;">Admin</span></span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-heading">Gestión Principal</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin.html" class="sidebar-link">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-productos.html" class="sidebar-link active">
+            <span>Inventario Productos</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuarios.html" class="sidebar-link">
+            <span>Usuarios & Roles</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-heading">Accesos Rápidos</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin-producto-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Producto</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuario-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Usuario</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../index.html" class="sidebar-link" target="_blank">
+            <span>Ver Tienda</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <small style="color: #8e9bb3; display: block; font-size: 0.75rem;">
+        DSY1104 · Duoc UC<br>Forma B: LEVEL-UP GAMER
+      </small>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h2 id="form-title">Nuevo Producto Gamer</h2>
+      </div>
+
+      <div id="admin-user-display">
+        <!-- Inyectado por js/admin.js -->
+      </div>
+    </header>
+
+    <div class="admin-content">
+      
+      <div class="admin-form-card">
+        <h3 id="form-heading">Ficha Técnica del Producto</h3>
+
+        <form id="form-producto-admin" novalidate>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-codigo" class="form-label">Código de Producto (*):</label>
+              <input type="text" id="prod-codigo" class="form-control" placeholder="Ej: AC003" required>
+              <div class="invalid-feedback"></div>
+              <p class="form-hint">Mínimo 3 caracteres alfanuméricos (ej: JM001, CO001).</p>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-categoria" class="form-label">Categoría (*):</label>
+              <select id="prod-categoria" class="form-control" required>
+                <option value="">-- Seleccione una categoría --</option>
+                <option value="Juegos de Mesa">Juegos de Mesa</option>
+                <option value="Accesorios">Accesorios</option>
+                <option value="Consolas">Consolas</option>
+                <option value="Computadores Gamers">Computadores Gamers</option>
+                <option value="Sillas Gamers">Sillas Gamers</option>
+                <option value="Mouse">Mouse</option>
+                <option value="Mousepad">Mousepad</option>
+                <option value="Poleras Personalizadas">Poleras Personalizadas</option>
+                <option value="Polerones Gamers Personalizados">Polerones Gamers Personalizados</option>
+                <option value="Servicio Técnico">Servicio Técnico</option>
+              </select>
+              <div class="invalid-feedback"></div>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-nombre" class="form-label">Nombre del Producto (*):</label>
+              <input type="text" id="prod-nombre" class="form-control" placeholder="Ej: Teclado Mecánico RGB" maxlength="100" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-marca" class="form-label">Marca / Fabricante:</label>
+              <input type="text" id="prod-marca" class="form-control" placeholder="Ej: Razer, Logitech, ASUS, Devir" maxlength="100">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="prod-precio" class="form-label">Precio en CLP (*):</label>
+              <input type="number" id="prod-precio" class="form-control" placeholder="Ej: 39990 (0 = Gratuito)" min="0" step="any" required>
+              <div class="invalid-feedback"></div>
+              <p class="form-hint">Si ingresa 0 se considerará un servicio o producto FREE.</p>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-stock" class="form-label">Stock Actual (*):</label>
+              <input type="number" id="prod-stock" class="form-control" placeholder="Ej: 15" min="0" step="1" required>
+              <div class="invalid-feedback"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="prod-stock-critico" class="form-label">Stock Crítico (opcional):</label>
+              <input type="number" id="prod-stock-critico" class="form-control" placeholder="Ej: 3" min="0" step="1">
+              <div class="invalid-feedback"></div>
+              <p class="form-hint">Umbral para alertar stock bajo.</p>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="prod-descripcion" class="form-label">Descripción del Producto:</label>
+            <textarea id="prod-descripcion" class="form-control" rows="3" placeholder="Detalles de hardware, especificaciones técnicas y compatibilidad..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="prod-imagen" class="form-label">URL de la Imagen:</label>
+            <input type="url" id="prod-imagen" class="form-control" placeholder="https://ejemplo.com/foto-producto.jpg">
+            <p class="form-hint">URL de imagen en alta resolución o captura del producto.</p>
+          </div>
+
+          <div style="display: flex; gap: 12px; margin-top: 24px;">
+            <button type="submit" class="btn btn-primary" id="btn-guardar-producto">
+              Guardar Producto
+            </button>
+            <a href="admin-productos.html" class="btn btn-secondary">
+              Cancelar
+            </a>
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+  
+    <footer class="admin-footer">
+      <span>&copy; 2026 Level-Up Gamer — Panel de Administración</span>
+      <span>DSY1104 · Duoc UC</span>
+    </footer>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/validations.js"></script>
+  <script src="../../js/cart.js"></script>
+  <script src="../../js/admin.js"></script>
+</body>
+</html>

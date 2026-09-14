@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración — LEVEL-UP GAMER</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/admin.css?v=2.5">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="admin.html" class="sidebar-brand">
+        <img src="../../assets/img/logo.png" alt="Logo" class="brand-logo-img">
+        <span>Level-Up <span style="color: #1E90FF;">Admin</span></span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-heading">Gestión Principal</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin.html" class="sidebar-link active">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-productos.html" class="sidebar-link">
+            <span>Inventario Productos</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuarios.html" class="sidebar-link">
+            <span>Usuarios & Roles</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-heading">Accesos Rápidos</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin-producto-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Producto</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuario-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Usuario</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../index.html" class="sidebar-link" target="_blank">
+            <span>Ver Tienda</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <small style="color: #8e9bb3; display: block; font-size: 0.75rem;">
+        DSY1104 · Duoc UC<br>Forma B: LEVEL-UP GAMER
+      </small>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h2 id="admin-welcome-msg">Panel de Control General</h2>
+      </div>
+
+      <div id="admin-user-display">
+        <!-- Inyectado por verificarAccesoAdmin() en js/admin.js -->
+      </div>
+    </header>
+
+    <div class="admin-content">
+      
+      <!-- Tarjetas de Métricas -->
+      <section class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-info">
+            <h3>Total Productos</h3>
+            <div class="metric-value" id="metric-total-products">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h3>Stock Crítico</h3>
+            <div class="metric-value text-danger" id="metric-critical-products">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h3>Usuarios Activos</h3>
+            <div class="metric-value" id="metric-total-users">0</div>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h3>Artículos en Carritos</h3>
+            <div class="metric-value text-success" id="metric-cart-items">0</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Roles del Sistema -->
+      <section class="admin-form-card">
+        <h3>Control de Roles y Permisos</h3>
+        <p style="color: #8e9bb3; margin-bottom: 20px; font-size: 0.92rem;">
+          El sistema cuenta con 3 perfiles de acceso claramente definidos:
+        </p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px;">
+          <div style="padding: 18px;  background-color: rgba(220, 53, 69, 0.1); border: 1px solid rgba(220, 53, 69, 0.3);">
+            <strong style="color: #ff6b6b; display: block; margin-bottom: 8px; font-size: 1rem;">Administrador</strong>
+            <p style="font-size: 0.85rem; color: #ffb4b4; margin: 0; line-height: 1.5;">
+              Acceso total al sistema: gestión completa del catálogo de hardware/juegos, edición, eliminación y administración de usuarios y roles.
+            </p>
+          </div>
+
+          <div style="padding: 18px;  background-color: rgba(253, 126, 20, 0.1); border: 1px solid rgba(253, 126, 20, 0.3);">
+            <strong style="color: #ffaa5a; display: block; margin-bottom: 8px; font-size: 1rem;">Vendedor</strong>
+            <p style="font-size: 0.85rem; color: #ffd6b0; margin: 0; line-height: 1.5;">
+              Solo puede consultar el listado de productos y stock. Los accesos a gestión de usuarios, creación y borrado se restringen automáticamente.
+            </p>
+          </div>
+
+          <div style="padding: 18px;  background-color: rgba(30, 144, 255, 0.1); border: 1px solid rgba(30, 144, 255, 0.3);">
+            <strong style="color: #70b5ff; display: block; margin-bottom: 8px; font-size: 1rem;">Cliente</strong>
+            <p style="font-size: 0.85rem; color: #b8dcff; margin: 0; line-height: 1.5;">
+              Navegación en tienda pública, carrito con 20% de descuento Duoc y consulta de artículos gamer.
+            </p>
+          </div>
+        </div>
+
+        <p style="font-size: 0.85rem; color: #8e9bb3; margin-top: 18px;">
+          <em>Nota: Puedes usar el selector de rol en la barra superior derecha para alternar en vivo entre Administrador y Vendedor para probar los permisos.</em>
+        </p>
+      </section>
+
+      <!-- Acciones Rápidas -->
+      <section style="display: flex; gap: 14px; flex-wrap: wrap;">
+        <a href="admin-productos.html" class="btn btn-primary">
+          Ver Inventario de Productos
+        </a>
+        <a href="admin-producto-form.html" class="btn btn-secondary btn-admin-create">
+          Agregar Nuevo Producto
+        </a>
+        <a href="admin-usuarios.html" class="btn btn-secondary nav-link-users">
+          Ver Listado de Usuarios
+        </a>
+        <a href="../../index.html" class="btn btn-outline" target="_blank">
+          Abrir Tienda Pública
+        </a>
+      </section>
+
+    </div>
+  
+    <footer class="admin-footer">
+      <span>&copy; 2026 Level-Up Gamer — Panel de Administración</span>
+      <span>DSY1104 · Duoc UC</span>
+    </footer>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/validations.js"></script>
+  <script src="../../js/cart.js"></script>
+  <script src="../../js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const prods = obtenerProductos();
+      const users = obtenerUsuarios();
+      const cart = obtenerCarrito();
+
+      const elTotalProds = document.getElementById('metric-total-products');
+      const elCritProds = document.getElementById('metric-critical-products');
+      const elTotalUsers = document.getElementById('metric-total-users');
+      const elCartItems = document.getElementById('metric-cart-items');
+
+      if (elTotalProds) elTotalProds.textContent = prods.length;
+      if (elCritProds) {
+        const countCritical = prods.filter(p => p.stockCritico && p.stock <= p.stockCritico).length;
+        elCritProds.textContent = countCritical;
+      }
+      if (elTotalUsers) elTotalUsers.textContent = users.length;
+      if (elCartItems) {
+        const totalItems = cart.reduce((sum, item) => sum + item.cantidad, 0);
+        elCartItems.textContent = totalItems;
+      }
+    });
+  </script>
+</body>
+</html>

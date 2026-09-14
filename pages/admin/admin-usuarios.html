@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestión de Usuarios — LEVEL-UP GAMER</title>
+  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/style.css">
+  <link rel="stylesheet" href="../../css/admin.css?v=2.5">
+</head>
+<body class="admin-body">
+
+  <aside class="admin-sidebar">
+    <div class="sidebar-header">
+      <a href="admin.html" class="sidebar-brand">
+        <img src="../../assets/img/logo.png" alt="Logo" class="brand-logo-img">
+        <span>Level-Up <span style="color: #1E90FF;">Admin</span></span>
+      </a>
+    </div>
+
+    <nav class="sidebar-nav">
+      <div class="sidebar-heading">Gestión Principal</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin.html" class="sidebar-link">
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a href="admin-productos.html" class="sidebar-link">
+            <span>Inventario Productos</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuarios.html" class="sidebar-link active">
+            <span>Usuarios & Roles</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-heading">Accesos Rápidos</div>
+      <ul class="sidebar-nav-list">
+        <li>
+          <a href="admin-producto-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Producto</span>
+          </a>
+        </li>
+        <li class="nav-link-users">
+          <a href="admin-usuario-form.html" class="sidebar-link btn-admin-create">
+            <span>+ Nuevo Usuario</span>
+          </a>
+        </li>
+        <li>
+          <a href="../../index.html" class="sidebar-link" target="_blank">
+            <span>Ver Tienda</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="sidebar-footer">
+      <small style="color: #8e9bb3; display: block; font-size: 0.75rem;">
+        DSY1104 · Duoc UC<br>Forma B: LEVEL-UP GAMER
+      </small>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <header class="admin-topbar">
+      <div class="topbar-title">
+        <h2>Administración de Usuarios y Roles</h2>
+      </div>
+
+      <div id="admin-user-display">
+        <!-- Inyectado por js/admin.js -->
+      </div>
+    </header>
+
+    <div class="admin-content">
+      
+      <div class="tabla-card">
+        <div class="tabla-header">
+          <h3>Usuarios Registrados en el Sistema</h3>
+          <a href="admin-usuario-form.html" class="btn btn-primary" id="btn-nuevo-usuario">
+            + Nuevo Usuario
+          </a>
+        </div>
+
+        <div class="admin-table-wrapper" style="padding: 0; border: none; box-shadow: none;">
+          <table class="admin-table">
+            <thead>
+              <tr>
+                <th>RUN (RUT)</th>
+                <th>Nombre Completo</th>
+                <th>Correo Electrónico</th>
+                <th>Tipo de Usuario</th>
+                <th>Región</th>
+                <th>Comuna</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="table-users-body">
+              <!-- Renderizado dinámicamente por cargarTablaUsuarios() -->
+            </tbody>
+          </table>
+        </div>
+
+        <div class="pagination-bar">
+          <button class="page-item">&laquo;</button>
+          <button class="page-item active">1</button>
+          <button class="page-item">&raquo;</button>
+        </div>
+      </div>
+
+    </div>
+  
+    <footer class="admin-footer">
+      <span>&copy; 2026 Level-Up Gamer — Panel de Administración</span>
+      <span>DSY1104 · Duoc UC</span>
+    </footer>
+  </main>
+
+  <script src="../../js/data.js"></script>
+  <script src="../../js/storage.js"></script>
+  <script src="../../js/validations.js"></script>
+  <script src="../../js/cart.js"></script>
+  <script src="../../js/admin.js"></script>
+</body>
+</html>
