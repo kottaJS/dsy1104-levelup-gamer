@@ -1,0 +1,445 @@
+/* Estilos panel admin */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@700&display=swap');
+
+:root {
+  --admin-bg: #000000;
+  --admin-card: #111111;
+  --admin-sidebar: #0a0a0a;
+  --admin-border: #262626;
+  --admin-text: #FFFFFF;
+  --admin-text-muted: #D3D3D3;
+
+  --neon-blue: #1E90FF;
+  --neon-green: #39FF14;
+  --font-heading: 'Roboto', 'Segoe UI', sans-serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  /* Bordes 100% rectos y afilados */
+  --radius: 0px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  border-radius: 0 !important;
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body.admin-body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  background-color: var(--admin-bg);
+  color: var(--admin-text);
+  display: flex !important;
+  flex-direction: row !important;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Sidebar lateral */
+.admin-sidebar {
+  width: 260px;
+  min-width: 260px;
+  max-width: 260px;
+  background-color: var(--admin-sidebar);
+  border-right: 1px solid var(--admin-border);
+  color: #c2c7d0;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  min-height: 100vh;
+}
+
+.sidebar-header {
+  padding: 18px 20px;
+  border-bottom: 1px solid var(--admin-border);
+}
+
+.sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.sidebar-brand span {
+  color: #39FF14;
+}
+
+.sidebar-brand-icon {
+  font-size: 1.2rem;
+}
+
+.brand-logo-img {
+  height: 28px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.sidebar-nav {
+  padding: 14px 0;
+  flex-grow: 1;
+}
+
+.sidebar-heading {
+  padding: 8px 18px 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--admin-text-muted);
+}
+
+.sidebar-nav-list,
+.sidebar-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-link,
+.sidebar-nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 18px;
+  color: #c2c7d0;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition: background-color 0.15s ease;
+}
+
+.sidebar-link:hover,
+.sidebar-link.active,
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
+  background-color: #1a2033;
+  color: var(--neon-blue);
+  border-left-color: var(--neon-blue);
+}
+
+.sidebar-footer {
+  padding: 16px 18px;
+  border-top: 1px solid var(--admin-border);
+}
+
+/* Área principal */
+.admin-main {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--admin-bg);
+  min-height: 100vh;
+}
+
+.admin-topbar {
+  background-color: var(--admin-card);
+  border-bottom: 1px solid var(--admin-border);
+  padding: 14px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.topbar-title h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.admin-content {
+  padding: 24px;
+  max-width: 1300px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Métricas del Dashboard */
+.metrics-grid,
+.metricas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.metric-card,
+.caja-metrica {
+  background-color: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  padding: 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.metric-info h3,
+.caja-metrica h4 {
+  font-size: 0.75rem;
+  color: var(--admin-text-muted);
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.metric-value,
+.caja-metrica .valor {
+  font-family: var(--font-heading);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.text-danger {
+  color: #ef4444 !important;
+}
+
+.text-success {
+  color: var(--neon-green) !important;
+}
+
+/* Tarjetas y Contenedores */
+.tabla-card,
+.admin-table-wrapper,
+.admin-form-card {
+  background-color: var(--admin-card);
+  border: 1px solid var(--admin-border);
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.admin-form-card h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--admin-border);
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.tabla-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--admin-border);
+  padding-bottom: 10px;
+}
+
+.tabla-header h3 {
+  font-size: 1.05rem;
+  margin: 0;
+  font-weight: 700;
+}
+
+/* Tablas Administrativas planas con bordes rectos */
+.admin-table,
+.tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.admin-table th,
+.admin-table td,
+.tabla-admin th,
+.tabla-admin td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--admin-border);
+  font-size: 0.88rem;
+  vertical-align: middle;
+}
+
+.admin-table th,
+.tabla-admin th {
+  background-color: #1a2030;
+  color: var(--admin-text-muted);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.admin-table tbody tr:hover,
+.tabla-admin tbody tr:hover {
+  background-color: #1b2234;
+}
+
+/* Miniatura en tabla */
+.img-miniatura-tabla {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  background-color: #050505;
+  border: 1px solid var(--admin-border);
+  padding: 2px;
+}
+
+/* Badges afilados */
+.badge-administrador,
+.badge-admin {
+  background-color: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge-vendedor {
+  background-color: rgba(245, 158, 11, 0.15);
+  color: #fbbf24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.badge-cliente {
+  background-color: rgba(30, 144, 255, 0.15);
+  color: #60a5fa;
+  border: 1px solid rgba(30, 144, 255, 0.3);
+  padding: 2px 7px;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.fila-stock-critico {
+  background-color: rgba(239, 68, 68, 0.1) !important;
+}
+
+.badge-critico {
+  background-color: #dc2626;
+  color: white;
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+/* Formularios Admin */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #FFFFFF;
+}
+
+.form-control {
+  width: 100%;
+  padding: 9px 12px;
+  background-color: #0c0f17;
+  border: 1px solid var(--admin-border);
+  color: #FFFFFF;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  box-sizing: border-box;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--neon-blue);
+}
+
+.form-hint {
+  font-size: 0.74rem;
+  color: var(--admin-text-muted);
+  margin: 4px 0 0 0;
+}
+
+.invalid-feedback {
+  font-size: 0.76rem;
+  color: #ef4444;
+  margin-top: 4px;
+  display: none;
+}
+
+.invalid-feedback.active {
+  display: block;
+}
+
+.form-control.is-invalid {
+  border-color: #ef4444;
+}
+
+/* Paginación */
+.pagination-bar {
+  display: flex;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 18px;
+}
+
+.page-item {
+  background-color: #171d2b;
+  border: 1px solid var(--admin-border);
+  color: #FFFFFF;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.82rem;
+  transition: background-color 0.15s;
+}
+
+.page-item:hover,
+.page-item.active {
+  background-color: var(--neon-blue);
+  border-color: var(--neon-blue);
+  color: #FFFFFF;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body.admin-body {
+    flex-direction: column !important;
+  }
+  .admin-sidebar {
+    width: 100%;
+    min-width: 100%;
+    max-width: 100%;
+    min-height: auto;
+  }
+  .admin-main {
+    min-height: auto;
+  }
+}
+
+/* Footer administrativo semántico */
+.admin-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--admin-border);
+  background-color: var(--admin-card);
+  font-size: 0.8rem;
+  color: var(--admin-text-muted);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+}

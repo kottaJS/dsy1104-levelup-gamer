@@ -1,0 +1,875 @@
+/* Estilos generales Level-Up Gamer */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Orbitron:wght@700&display=swap');
+
+:root {
+  /* Paleta oficial exacta según pauta Forma B Duoc UC */
+  --bg-main: #000000;           /* Negro (#000000) oficial */
+  --bg-surface: #111111;        /* Superficie oscura para cajas */
+  --bg-card: #141414;           /* Tarjetas y módulos */
+  --bg-input: #0d0d0d;          /* Inputs de formulario */
+  --border-color: #262626;      /* Bordes discretos */
+
+  /* Colores de acento pedidos en pauta */
+  --primary: #1E90FF;           /* Azul Eléctrico (#1E90FF) */
+  --primary-hover: #1573d6;
+  --accent: #39FF14;            /* Verde Neón (#39FF14) */
+  --accent-hover: #2ecc0d;
+
+  /* Tipografías y textos según pauta */
+  --text-primary: #FFFFFF;      /* Blanco (#FFFFFF) */
+  --text-secondary: #D3D3D3;    /* Gris Claro (#D3D3D3) */
+  --text-muted: #888888;
+
+  --font-heading: 'Roboto', 'Segoe UI', sans-serif;
+  --font-logo: 'Orbitron', 'Roboto', sans-serif;
+  --font-body: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+
+  /* Bordes 100% rectos y afilados (sin curvas) */
+  --radius: 0px;
+}
+
+/* Reset general */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border-radius: 0 !important; /* Fuerza bordes rectos en todos los elementos */
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.3;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+a:hover {
+  color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Contenedor centrado estándar */
+.container {
+  width: 92%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Estilos generales Level-Up Gamer */
+.top-auth-bar, .top-bar {
+  background-color: #090b0f;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-muted);
+  padding: 8px 0;
+  font-size: 0.82rem;
+}
+
+.top-auth-bar .container, .top-bar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.brand-motto {
+  color: var(--text-secondary);
+}
+
+.session-user-slot {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.session-link {
+  color: var(--text-secondary);
+}
+
+.session-link:hover {
+  color: var(--primary);
+}
+
+.session-divider {
+  color: var(--border-color);
+}
+
+.btn-cerrar-sesion {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 0.82rem;
+  margin-left: 8px;
+}
+
+.btn-cerrar-sesion:hover {
+  text-decoration: underline;
+}
+
+/* Estilos generales Level-Up Gamer */
+.main-navbar, .navbar {
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-wrapper, .navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+.brand-logo, .logo {
+  font-family: var(--font-logo);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-primary);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.brand-logo span.accent, .logo span.accent {
+  color: #39FF14;
+}
+
+.brand-logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+}
+
+.nav-menu, .nav-links {
+  display: flex;
+  gap: 22px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-link, .nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  padding: 6px 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-link:hover, .nav-link.active,
+.nav-links a:hover, .nav-links a.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-cart-btn, .cart-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 14px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.nav-cart-btn:hover, .cart-btn:hover {
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+}
+
+/* Estilos generales Level-Up Gamer */
+.hero-banner-section {
+  margin: 24px auto 36px;
+}
+
+.hero-banner-frame {
+  width: 100%;
+  border: 1px solid var(--border-color);
+  background-color: #000000;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.hero-banner-frame a {
+  display: block;
+}
+
+.hero-banner-image {
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  display: block;
+}
+
+.hero-banner-footer {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-top: none;
+  padding: 24px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.hero-banner-info h1 {
+  font-size: 1.55rem;
+  margin: 0 0 6px 0;
+  color: var(--text-primary);
+}
+
+.hero-banner-info p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.hero-banner-actions {
+  display: flex;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+/* Compatibilidad con vistas split legacy si se usan */
+.hero-section, .hero {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 36px 40px;
+  margin: 28px auto;
+}
+
+.hero-grid, .hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 36px;
+}
+
+/* Estilos generales Level-Up Gamer */
+.btn {
+  display: inline-block;
+  padding: 9px 18px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+  border-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-secondary {
+  background-color: #262f40;
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+  background-color: #313d52;
+  color: var(--text-primary);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border-color: var(--border-color);
+  color: var(--text-secondary);
+}
+
+.btn-outline:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline-primary {
+  background-color: transparent;
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.8rem;
+}
+
+.btn-lg {
+  padding: 12px 24px;
+  font-size: 0.95rem;
+}
+
+.btn-pagar-verde {
+  background-color: var(--accent);
+  color: #0b1118;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  border: 1px solid var(--accent);
+  padding: 12px;
+  width: 100%;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.15s ease;
+}
+
+.btn-pagar-verde:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+
+/* Estilos generales Level-Up Gamer */
+.section-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+}
+
+.section-title {
+  font-size: 1.6rem;
+  color: var(--text-primary);
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.tarjeta-producto {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s ease;
+}
+
+.tarjeta-producto:hover {
+  border-color: var(--primary);
+}
+
+.tarjeta-img-wrap {
+  position: relative;
+  height: 220px;
+  background-color: #050505;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tarjeta-img-wrap img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 10px;
+}
+
+.alerta-stock {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background-color: #dc2626;
+  color: #ffffff;
+  padding: 3px 7px;
+  font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.tarjeta-info {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.tarjeta-categoria {
+  font-size: 0.72rem;
+  color: var(--primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 4px;
+}
+
+.tarjeta-titulo {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+  line-height: 1.35;
+}
+
+.tarjeta-titulo a:hover {
+  color: var(--primary);
+}
+
+.tarjeta-autor {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.tarjeta-pie {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 10px;
+  border-top: 1px solid var(--border-color);
+}
+
+.tarjeta-precio {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+/* Estilos generales Level-Up Gamer */
+.catalog-toolbar {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-input, .filter-select {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.search-input:focus, .filter-select:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+/* Estilos generales Level-Up Gamer */
+.breadcrumbs {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.breadcrumbs a {
+  color: var(--primary);
+}
+
+.detalle-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 28px;
+  margin-bottom: 36px;
+}
+
+.detalle-foto-principal {
+  background-color: #050505;
+  border: 1px solid var(--border-color);
+  height: 420px;
+  overflow: hidden;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detalle-foto-principal img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 14px;
+}
+
+.detalle-miniaturas {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.miniatura {
+  width: 68px;
+  height: 68px;
+  background-color: #050505;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.miniatura:hover {
+  border-color: var(--primary);
+}
+
+.miniatura.activa {
+  border-color: var(--primary);
+}
+
+.miniatura img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  padding: 4px;
+}
+
+.detalle-nombre {
+  font-size: 1.8rem;
+  margin-bottom: 8px;
+}
+
+.detalle-precio {
+  font-size: 1.8rem;
+  color: var(--accent);
+  margin: 12px 0;
+  font-weight: 700;
+}
+
+.detalle-datos p {
+  font-size: 0.9rem;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+}
+
+.detalle-descripcion {
+  margin: 18px 0;
+  padding: 14px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.detalle-accion {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.select-cantidad {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 8px 12px;
+  font-size: 0.9rem;
+}
+
+/* Estilos generales Level-Up Gamer */
+.carrito-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+  margin-bottom: 36px;
+}
+
+.carrito-fila {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  padding: 14px;
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+  margin-bottom: 10px;
+}
+
+.carrito-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  background-color: #050505;
+  border: 1px solid var(--border-color);
+  padding: 4px;
+}
+
+.carrito-info h4 {
+  font-size: 0.95rem;
+  margin-bottom: 3px;
+}
+
+.carrito-info p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.carrito-controles {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-control-qty {
+  width: 28px;
+  height: 28px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.btn-control-qty:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.input-control-qty {
+  width: 40px;
+  text-align: center;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 4px;
+}
+
+.btn-eliminar-item {
+  background: none;
+  border: none;
+  color: #ef4444;
+  cursor: pointer;
+  font-size: 0.8rem;
+  margin-left: 8px;
+}
+
+.btn-eliminar-item:hover {
+  text-decoration: underline;
+}
+
+.carrito-subtotal-item {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.carrito-resumen {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 20px;
+}
+
+.carrito-total-titulo {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 10px;
+  margin-bottom: 14px;
+  font-size: 1.2rem;
+}
+
+.cupon-box {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  margin-bottom: 14px;
+}
+
+.cupon-input-grupo {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+/* Estilos generales Level-Up Gamer */
+.form-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  max-width: 560px;
+  margin: 30px auto;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: var(--text-secondary);
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.is-invalid {
+  border-color: #ef4444 !important;
+}
+
+.is-valid {
+  border-color: var(--accent) !important;
+}
+
+.invalid-feedback {
+  color: #ef4444;
+  font-size: 0.78rem;
+  margin-top: 4px;
+  display: none;
+}
+
+/* Estilos generales Level-Up Gamer */
+.site-footer {
+  background-color: #090b0f;
+  border-top: 1px solid var(--border-color);
+  padding: 40px 0 20px;
+  margin-top: auto;
+  color: var(--text-secondary);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: 28px;
+  margin-bottom: 30px;
+}
+
+.footer-col h4 {
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+  color: var(--text-primary);
+}
+
+.footer-links {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 6px;
+}
+
+.footer-links a {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* Estilos generales Level-Up Gamer */
+.toast-notificacion {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #141824;
+  border: 1px solid var(--primary);
+  color: var(--text-primary);
+  padding: 12px 18px;
+  z-index: 1000;
+  font-size: 0.88rem;
+}
+
+/* Estilos generales Level-Up Gamer */
+@media (max-width: 768px) {
+  .hero-grid, .hero .container,
+  .detalle-layout, .carrito-grid, .footer-grid {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+  .nav-menu {
+    display: none;
+  }
+}

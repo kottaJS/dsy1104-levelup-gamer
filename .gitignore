@@ -1,0 +1,7 @@
+*.zip
+node_modules/
+docs/pautas_duoc/
+docs/GUIA_VIDEO_Y_COMMITS.md
+docs/PREPARACION_INTERROGACION.md
+.DS_Store
+Thumbs.db
