@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Level-Up Gamer — Tienda Gamer en Chile</title>
+  <meta name="description" content="Tienda online especializada en consolas, PC gamers, periféricos, sillas y juegos de mesa en Chile.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2.2">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="top-auth-bar">
+      <div class="container">
+        <span class="brand-motto">Envíos a todo Chile · 20% de descuento para Comunidad Duoc UC</span>
+        <div id="user-session-links" class="session-user-slot">
+          <a href="pages/login.html" class="session-link">Iniciar sesión</a>
+          <span class="session-divider">|</span>
+          <a href="pages/registro.html" class="session-link">Registrarse</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-navbar">
+      <div class="container nav-wrapper">
+        <a href="index.html" class="brand-logo" id="nav-brand-logo"><img src="assets/img/logo.png" alt="Logo Level-Up" class="brand-logo-img"> LEVEL-UP <span class="accent">GAMER</span></a>
+
+        <div class="nav-menu">
+          <a href="index.html" class="nav-link active">Inicio</a>
+          <a href="pages/productos.html" class="nav-link ">Catálogo</a>
+          <a href="pages/nosotros.html" class="nav-link ">Nosotros</a>
+          <a href="pages/blog/blog.html" class="nav-link ">Blog</a>
+          <a href="pages/contacto.html" class="nav-link ">Contacto</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="pages/carrito.html" class="nav-cart-btn cart-count-badge" id="btn-cart-nav">
+            Carrito (0)
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="container hero-banner-section">
+      <div class="hero-banner-frame">
+        <a href="pages/productos.html" title="Ver Catálogo Completo Level-Up Gamer">
+          <img src="assets/img/hero-banner.webp" alt="Level-Up Gamer — Tienda Gamer en Chile" class="hero-banner-image">
+        </a>
+      </div>
+      <div class="hero-banner-footer">
+        <div class="hero-banner-info">
+          <h1>Equipamiento Gamer y Tecnología Oficial</h1>
+          <p>
+            Consolas de última generación, computadores armados para alto rendimiento, periféricos de precisión y juegos de mesa con despacho a todo Chile.
+          </p>
+        </div>
+        <div class="hero-banner-actions">
+          <a href="pages/productos.html" class="btn btn-primary btn-lg">
+            Ver Catálogo
+          </a>
+          <a href="pages/nosotros.html" class="btn btn-outline btn-lg">
+            Sobre Nosotros
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" style="margin-bottom: 50px;">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Productos Destacados</h2>
+        <a href="pages/productos.html" class="btn btn-outline btn-sm">Ver Catálogo Completo</a>
+      </div>
+      <div id="home-featured-products" class="products-grid"></div>
+    </section>
+
+    <section class="container" style="margin-bottom: 60px;">
+      <div style="background-color: var(--bg-surface); border: 1px solid var(--border-color); padding: 30px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; text-align: left;">
+        <div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--primary);">Despacho Nacional</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">Envíos rápidos y seguros a todas las regiones de Chile mediante transportistas certificados.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--accent);">20% OFF Comunidad Duoc</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">Descuento automático para estudiantes y docentes con correo @duoc.cl en el carrito.</p>
+        </div>
+        <div>
+          <h3 style="font-size: 1.05rem; font-weight: 700; margin-bottom: 6px; color: var(--primary);">Garantía y Servicio</h3>
+          <p style="color: var(--text-muted); font-size: 0.88rem; line-height: 1.5;">Todos los productos cuentan con garantía formal y opción de diagnóstico técnico especializado.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 14px;"><img src="assets/img/logo.png" alt="Logo Level-Up" class="brand-logo-img"> LEVEL-UP <span class="accent">GAMER</span></div>
+          <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; line-height: 1.6;">
+            Tienda chilena de hardware gamer, consolas, periféricos de alto rendimiento y juegos de mesa. Despachos rápidos y garantía formal en todo Chile.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <ul class="footer-links">
+            <li><a href="pages/productos.html?cat=Consolas">Consolas</a></li>
+            <li><a href="pages/productos.html?cat=Computadores%20Gamers">Computadores Gamers</a></li>
+            <li><a href="pages/productos.html?cat=Accesorios">Accesorios</a></li>
+            <li><a href="pages/productos.html?cat=Juegos%20de%20Mesa">Juegos de Mesa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="pages/nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="pages/blog/blog.html">Blog y Guías</a></li>
+            <li><a href="pages/contacto.html">Contacto y Soporte</a></li>
+            <li><a href="pages/login.html">Acceso Administrador</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Beneficio Duoc UC</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+            20% de descuento permanente en el total de tu compra al registrarte o iniciar sesión con correo institucional @duoc.cl.
+          </p>
+          <a href="pages/registro.html" class="btn btn-outline btn-sm" style="display: inline-block;">Crear cuenta con @duoc.cl</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Level-Up Gamer — Asignatura DSY1104 · Duoc UC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/validations.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

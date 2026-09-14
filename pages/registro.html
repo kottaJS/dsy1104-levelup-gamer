@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registro de Cliente — Level-Up Gamer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css?v=2.2">
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="top-auth-bar">
+      <div class="container">
+        <span class="brand-motto">Envíos a todo Chile · 20% de descuento para Comunidad Duoc UC</span>
+        <div id="user-session-links" class="session-user-slot">
+          <a href="login.html" class="session-link">Iniciar sesión</a>
+          <span class="session-divider">|</span>
+          <a href="registro.html" class="session-link">Registrarse</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-navbar">
+      <div class="container nav-wrapper">
+        <a href="../index.html" class="brand-logo" id="nav-brand-logo"><img src="../assets/img/logo.png" alt="Logo Level-Up" class="brand-logo-img"> LEVEL-UP <span class="accent">GAMER</span></a>
+
+        <div class="nav-menu">
+          <a href="../index.html" class="nav-link ">Inicio</a>
+          <a href="productos.html" class="nav-link ">Catálogo</a>
+          <a href="nosotros.html" class="nav-link ">Nosotros</a>
+          <a href="blog/blog.html" class="nav-link ">Blog</a>
+          <a href="contacto.html" class="nav-link ">Contacto</a>
+        </div>
+
+        <div class="nav-actions">
+          <a href="carrito.html" class="nav-cart-btn cart-count-badge" id="btn-cart-nav">
+            Carrito (0)
+          </a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" style="margin-top: 40px; margin-bottom: 60px;">
+    <div class="form-box" style="max-width: 650px;">
+      <div style="text-align: center; margin-bottom: 24px;">
+        <h1 style="font-size: 1.8rem; margin-bottom: 6px;">Registro de Cliente</h1>
+        <p style="color: var(--text-muted); font-size: 0.9rem;">Crea tu cuenta para acceder a compras online y al 20% de descuento institucional Duoc</p>
+      </div>
+
+      <form id="form-registro" novalidate>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="reg-run">RUN (sin puntos ni guion) *</label>
+            <input type="text" id="reg-run" class="form-control" placeholder="Ej: 19011029K" required maxlength="9">
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-fecha">Fecha de Nacimiento (+18 años) *</label>
+            <input type="date" id="reg-fecha" class="form-control" required>
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="reg-nombre">Nombre *</label>
+            <input type="text" id="reg-nombre" class="form-control" placeholder="Tu nombre" required maxlength="50">
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-apellidos">Apellidos *</label>
+            <input type="text" id="reg-apellidos" class="form-control" placeholder="Tus apellidos" required maxlength="100">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-correo">Correo Electrónico *</label>
+          <input type="email" id="reg-correo" class="form-control" placeholder="ejemplo@duoc.cl, @profesor.duoc.cl o @gmail.com" required maxlength="100">
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="reg-pass">Contraseña (4 a 20 caracteres) *</label>
+            <input type="password" id="reg-pass" class="form-control" required maxlength="30">
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="reg-confirm-pass">Confirmar Contraseña *</label>
+            <input type="password" id="reg-confirm-pass" class="form-control" required maxlength="30">
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+          <div class="form-group">
+            <label for="select-region">Región de Chile *</label>
+            <select id="select-region" class="form-control" required>
+              <option value="">Cargando regiones...</option>
+            </select>
+            <div class="invalid-feedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="select-comuna">Comuna *</label>
+            <select id="select-comuna" class="form-control" disabled required>
+              <option value="">Selecciona una región primero</option>
+            </select>
+            <div class="invalid-feedback"></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-direccion">Dirección de Despacho *</label>
+          <input type="text" id="reg-direccion" class="form-control" placeholder="Calle, número, departamento o villa" required maxlength="300">
+          <div class="invalid-feedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="reg-referido">Código de Referido (Opcional)</label>
+          <input type="text" id="reg-referido" class="form-control" placeholder="Ej: REFERIDO2026">
+        </div>
+
+        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
+          Completar Registro
+        </button>
+
+        <p style="text-align: center; margin-top: 18px; font-size: 0.9rem; color: var(--text-muted);">
+          ¿Ya tienes cuenta? <a href="login.html" style="color: var(--primary); font-weight: bold;">Inicia sesión</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 14px;"><img src="../assets/img/logo.png" alt="Logo Level-Up" class="brand-logo-img"> LEVEL-UP <span class="accent">GAMER</span></div>
+          <p style="color: var(--text-muted); font-size: 0.88rem; max-width: 320px; line-height: 1.6;">
+            Tienda chilena de hardware gamer, consolas, periféricos de alto rendimiento y juegos de mesa. Despachos rápidos y garantía formal en todo Chile.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Catálogo</h4>
+          <ul class="footer-links">
+            <li><a href="productos.html?cat=Consolas">Consolas</a></li>
+            <li><a href="productos.html?cat=Computadores%20Gamers">Computadores Gamers</a></li>
+            <li><a href="productos.html?cat=Accesorios">Accesorios</a></li>
+            <li><a href="productos.html?cat=Juegos%20de%20Mesa">Juegos de Mesa</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegación</h4>
+          <ul class="footer-links">
+            <li><a href="nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="blog/blog.html">Blog y Guías</a></li>
+            <li><a href="contacto.html">Contacto y Soporte</a></li>
+            <li><a href="login.html">Acceso Administrador</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Beneficio Duoc UC</h4>
+          <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.5;">
+            20% de descuento permanente en el total de tu compra al registrarte o iniciar sesión con correo institucional @duoc.cl.
+          </p>
+          <a href="registro.html" class="btn btn-outline btn-sm" style="display: inline-block;">Crear cuenta con @duoc.cl</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Level-Up Gamer — Asignatura DSY1104 · Duoc UC.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/data.js"></script>
+  <script src="../js/storage.js"></script>
+  <script src="../js/validations.js"></script>
+  <script src="../js/cart.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+</html>
